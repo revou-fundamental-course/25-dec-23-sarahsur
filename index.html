@@ -4,7 +4,7 @@
 <head>
     <title>katik - sarah</title>
     <meta charset="UTF-8">
-    <meta name="viewport">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="CSS/style.css">
 </head>
 
@@ -18,8 +18,7 @@
 
     <!--menu luas segitiga-->
     <p class="judul">Luas Segitiga</p>
-    <!--gambar segitiga nya-->
-    <img src=""/>
+    <center><img src="R.png" alt="segitiga" weight="200" height="200" ></center>
     <p>Rumus Luas Segitiga yaitu:</p>
     <p class="pala">L = 1/2 x a x t</p>
     <p>Di mana:</p>
@@ -31,22 +30,22 @@
     <fieldset>
         <legend>hitung luas segitiga</legend>
         <p>
-            <label for="Panjang Alas"></label>
-            <input type="number" name="Panjang Alas" placeholder="Panjang Alas">
+            <label for="panjangAlas"></label>
+            <input type="number" id="panjangAlas" placeholder="Panjang Alas" required>
         </p>
 
         <p>
             <label for="Tinggi"></label>
-            <input type="number" name="Tinggi" placeholder="Tinggi">
+            <input type="number" id="Tinggi" placeholder="Tinggi" required>
         </p>
     </fieldset>
     <br>
-    <button type="button">hitung</button>
-    <button type="button">reset</button>
+    <button class="button" onclick="hitungLuas()">hitung</button>
+    <button class="reset">reset</button>
 
     <!--menu keliling segitiga-->
     <p class="judul">Keliling Segitiga</p>
-    <!--gambar segitiga nya-->
+    <center><img src="R.png" alt="segitiga" width="200" height="200"></center>
     <p>Rumus keliling Segitiga yaitu:</p>
     <p class="pala">K = S1 + S2 + S3</p>
     <p>Di mana:</p>
@@ -60,22 +59,42 @@
         <legend>hitung keliling segitiga</legend>
         <p>
             <label for="S1"></label>
-            <input type="number" name="S1" placeholder="S1">
+            <input type="number" id="S1" placeholder="S1" required>
         </p>
 
         <p>
             <label for="S2"></label>
-            <input type="number" name="S2" placeholder="S2">
+            <input type="number" id="S2" placeholder="S2" required>
         </p>
 
         <p>
             <label for="S3"></label>
-            <input type="number" name="S3" placeholder="S3">
+            <input type="number" id="S3" placeholder="S3" required>
         </p>
     </fieldset>
     <br>
-    <button>hitung</button>
-    <button>reset</button>
+    <button class="button" onclick="hitungkeliling()">hitung</button>
+    <button class="reset" onclick="">reset</button>
 
+    <!--script src="/JS/index.js"-->
+    <script>
+		function hitungLuas() {
+			let alas = document.getElementById("panjangAlas").value;
+			let tinggi = document.getElementById("Tinggi").value;
+
+			let luas = 0.5 * alas * tinggi;
+
+			alert("Luas Segitiga: " + luas);
+		}
+        function hitungkeliling() {
+            let S1= document.getElementById("S1").value;
+			let S2= document.getElementById("S2").value;
+			let S3= document.getElementById("S3").value;
+
+            let keliling = parseInt(S1) + parseInt(S2) + parseInt(S3);
+
+            alert("Keliling Segitiga: " + keliling);
+        }
+	</script>
 </body>
 </html>
